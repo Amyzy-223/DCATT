@@ -15,6 +15,10 @@ from retrain import retrain_test
 import warnings
 warnings.filterwarnings('ignore')
 
+"""
+For first use, please download the dataset file from Google Drive and place it in './data/dataset/'.
+Google Drive URL: https://drive.google.com/file/d/1n-8RLCe7YILVuSeDmbj-gVPhkMGkHtkU/view?usp=drive_link
+"""
 
 if __name__ == '__main__':
 
@@ -120,6 +124,7 @@ if __name__ == '__main__':
 
     ## retrain and test
     retrain_test(args, best_epoch, PhyDataset, foldname)
+
 
 
 
