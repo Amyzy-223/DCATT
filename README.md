@@ -8,13 +8,18 @@ DCATT was trained and evaluated on two datasets and tasks.
 ### main_cog: 
 
 #### dataset instruction
-A dataset derived from the experiment published in "Time course of cognitive functions and physiological response under heat exposure: Thermal tolerance exposure time based on ECG and fNIRS". Thirty-eight volunteers participated in the experiments involving seven hot-humid exposure scenarios (25℃ to 44℃) to explore the impact of heat pressure and exposure time on operators' cognitive functions. The accuracy and reaction time of classical cognitive tests, fNIRS signals, and ECG signals were recorded simultaneously during the experiment. The input
+A dataset derived from the experiment published in "Time course of cognitive functions and physiological response under heat exposure: Thermal tolerance exposure time based on ECG and fNIRS". Thirty-eight volunteers participated in the experiments involving seven hot-humid exposure scenarios (25℃ to 44℃) to explore the impact of heat pressure and exposure time on operators' cognitive functions. The accuracy and reaction time of classical cognitive tests, fNIRS signals, and ECG signals were recorded simultaneously during the experiment. 
+
+The model input is a sequence of dynamic fNIRS prefrontal cortex undirected graphs with ALFF node features, four types of functional connectivity edge features, and ECG features in both time and frequency domains. 
+
+The model label is a sequence of the cognitive state (normal/abnormal), derived via clustering on accuracy and reaction time from classical cognitive tests.
 
 #### how to train it
 run './main_cog/main.py'
 
 #### prepare work
 For first use, please download the dataset file from Google Drive and place it in './data/dataset/'.
+
 Google Drive URL: https://drive.google.com/file/d/1n-8RLCe7YILVuSeDmbj-gVPhkMGkHtkU/view?usp=drive_link
 
 
@@ -26,3 +31,8 @@ SEED dataset, a classic dataset in the emotion recognition domain.
 run 'main_seed/main.py'
 
 #### prepare work:
+For first-time use, please prepare the dataset as follows: 
+
+1) Download the SEED dataset and place the Preprocessed_EEG folder into ./datas/rawdata. 
+
+2) Run ./datas/LoadData_emotion.py to generate the SEED_DCATT dataset.
